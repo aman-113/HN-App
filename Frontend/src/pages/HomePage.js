@@ -13,9 +13,16 @@ const HomePage = () => {
   const fetchStories = useCallback(async (page = 1) => {
     setLoading(true);
     try {
-      const { data } = await api.get(`/stories?page=${page}&limit=10`);
-      setStories(data.data);
-      setPagination(data.pagination);
+      const response = await api.get(`/stories?page=${page}&limit=10`);
+      const responseData = response.data || {};
+      setStories(responseData.data || []);
+      setPagination({
+        page: responseData.pagination?.page ?? 1,
+        totalPages: responseData.pagination?.totalPages ?? 1,
+        total: responseData.pagination?.total ?? 0,
+        hasPrevPage: responseData.pagination?.hasPrevPage ?? false,
+        hasNextPage: responseData.pagination?.hasNextPage ?? false,
+      });
     } catch {
       toast.error('Failed to load stories');
     } finally {
