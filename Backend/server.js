@@ -15,11 +15,13 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: [process.env.CLIENT_URL || '*'],
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization','application/json'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
+
+app.options('*', cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
