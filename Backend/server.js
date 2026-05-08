@@ -15,7 +15,7 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: [process.env.CLIENT_URL || 'http://localhost:3000', 'https://hn-app-pied.vercel.app'],
+  origin: [process.env.CLIENT_URL || 'http://localhost:3000', 'https://hn-app-ten.vercel.app/'],
   credentials: true,
 }));
 
