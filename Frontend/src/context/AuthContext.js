@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     if (token && savedUser) {
       setUser(JSON.parse(savedUser));
       try {
-        const { data } = await api.get('/auth/me');
+        const { data } = await api.get('api/auth/me');
         setUser(data.user);
         localStorage.setItem('user', JSON.stringify(data.user));
       } catch {
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   }, [loadUser]);
 
   const login = async (email, password) => {
-    const { data } = await api.post('/auth/login', { email, password });
+    const { data } = await api.post('api/auth/login', { email, password });
     localStorage.setItem('token', data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
     setUser(data.user);
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (username, email, password) => {
-    const { data } = await api.post('/auth/register', { username, email, password });
+    const { data } = await api.post('api/auth/register', { username, email, password });
     localStorage.setItem('token', data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
     setUser(data.user);

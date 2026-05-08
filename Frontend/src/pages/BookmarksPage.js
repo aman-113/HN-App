@@ -11,7 +11,7 @@ const BookmarksPage = () => {
   useEffect(() => {
     const fetchBookmarks = async () => {
       try {
-        const { data } = await api.get('/stories/bookmarked');
+        const { data } = await api.get('api/stories/bookmarked');
         setStories(data.data);
       } catch {
         toast.error('Failed to load bookmarks');
