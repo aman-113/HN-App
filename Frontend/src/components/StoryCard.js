@@ -28,7 +28,7 @@ const StoryCard = ({ story, rank, onBookmarkToggle }) => {
       return;
     }
     try {
-      const { data } = await api.post(`api/stories/${story._id}/bookmark`);
+      const { data } = await api.post(`stories/${story._id}/bookmark`);
       onBookmarkToggle(story._id, data.isBookmarked);
       toast.success(data.isBookmarked ? 'Bookmarked!' : 'Removed bookmark');
     } catch {

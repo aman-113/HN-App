@@ -13,7 +13,7 @@ const HomePage = () => {
   const fetchStories = useCallback(async (page = 1) => {
     setLoading(true);
     try {
-      const response = await api.get(`api/stories?page=${page}&limit=10`);
+      const response = await api.get(`stories?page=${page}&limit=10`);
       const responseData = response.data || {};
       setStories(responseData.data || []);
       setPagination({
@@ -37,7 +37,7 @@ const HomePage = () => {
   const handleScrape = async () => {
     setScraping(true);
     try {
-      const { data } = await api.post('api/scrape');
+      const { data } = await api.post('scrape');
       toast.success(`Scraped ${data.data.saved} stories!`);
       fetchStories(1);
     } catch {
