@@ -2,7 +2,7 @@
 
 A full-stack web application that scrapes and displays Hacker News stories with user authentication and bookmarking functionality.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 HN-App/
@@ -52,7 +52,7 @@ HN-App/
 └── README.md
 ```
 
-## 🚀 Features
+##  Features
 
 ### Backend
 - ✅ User authentication (Register, Login, JWT tokens)
@@ -73,7 +73,7 @@ HN-App/
 - ✅ Skeleton loading states
 - ✅ Auth context for state management
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Backend:**
 - Node.js & Express.js
@@ -87,7 +87,7 @@ HN-App/
 - Axios for API calls
 - CSS for styling
 
-## 📋 API Endpoints
+##  API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Create new user
@@ -102,7 +102,7 @@ HN-App/
 ### Scraping
 - `POST /api/scrape` - Scrape Hacker News stories
 
-## 🔧 Installation & Setup
+##  Installation & Setup
 
 ### Backend Setup
 
@@ -130,7 +130,7 @@ npm install
 npm start
 ```
 
-## 📚 Key Functionalities
+##  Key Functionalities
 
 ### Bookmark System
 - Users can bookmark stories by clicking the bookmark button
@@ -149,7 +149,7 @@ npm start
 - Password hashing with bcryptjs
 - Token stored in browser localStorage (Frontend)
 
-## 🔐 Authentication Flow
+##  Authentication Flow
 
 1. User registers with username, email, password
 2. Password is hashed and stored
@@ -158,7 +158,7 @@ npm start
 5. Token sent with every protected request
 6. Token verified by `protect` middleware
 
-## 📖 Usage Examples
+##  Usage Examples
 
 ### Get Stories with Pagination
 ```bash
@@ -177,23 +177,23 @@ GET /api/stories/bookmarked
 Headers: Authorization: Bearer {token}
 ```
 
-## 📝 Notes
+##  Notes
 
 - Old duplicate files (root level config, package.json, server.js) have been removed
 - Frontend folder added to repository
 - All code is tracked with git commits
 
-## 🚀 Deployment
+##  Deployment
 
 Ready to deploy on services like:
 - Backend: Heroku, Vercel, Railway, AWS
 - Frontend: Vercel, Netlify, GitHub Pages
 - Database: MongoDB Atlas
 
-## 📄 License
+##  License
 
 This project is open source.
 
-## 👨‍💻 Author
+## 👨 Author
 
 Created as a Hacker News clone application demonstrating full-stack development.

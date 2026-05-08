@@ -15,7 +15,7 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [process.env.CLIENT_URL || 'http://localhost:3000', 'https://hn-app-pied.vercel.app'],
   credentials: true,
 }));
 
@@ -27,6 +27,7 @@ const limiter = rateLimit({
   max: 100,
   message: { success: false, message: 'Too many requests, please try again later.' },
 });
+
 app.use('/api', limiter);
 
 app.use('/api/auth', authRoutes);
